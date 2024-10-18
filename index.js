@@ -31,7 +31,7 @@ async function run() {
 const protfoliocollection = client.db("pictech").collection("protfolio")
 const blogpostcollection = client.db("pictech").collection("blogpost")
 
-app.get("/protfolio", async (req,res)=>{
+app.get("/saaspicprotfolio", async (req,res)=>{
     const result = await protfoliocollection.find().toArray();
     res.send(result);
 });
