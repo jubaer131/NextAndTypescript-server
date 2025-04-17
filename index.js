@@ -36,12 +36,9 @@ app.get("/saaspicprotfolio", async (req,res)=>{
     res.send(result);
 });
 
-app.get("/detail", async (req,res)=>{
-  const result = await blogpostcollection.find().toArray();
-  res.send(result);
-});
 
- app.get('/blogpost', async (req, res) => {
+
+ app.get('/allpost', async (req, res) => {
   const search = req.query.search;
   const size = parseInt(req.query.size) || 5; 
   const page = parseInt(req.query.page) - 1; 
@@ -59,6 +56,11 @@ app.get("/detail", async (req,res)=>{
     console.error('Error fetching products:', error);
     res.status(500).send('Internal Server Error');
   }
+});
+
+app.get("/detail", async (req,res)=>{
+  const result = await blogpostcollection.find().toArray();
+  res.send(result);
 });
 
 
@@ -82,7 +84,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('Hello welcome come back  developer!')
+  res.send('Hello welcome   developer!')
 })
 
 app.listen(port, () => {
