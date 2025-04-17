@@ -3,7 +3,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
 require('dotenv').config()
 const app = express()
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000
 
 
 // Middleware
@@ -69,11 +69,10 @@ app.get('/paginationcount', async(req,res)=>{
 })
 
 
-
-    // Send a ping to confirm a successful connection
+  // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
+} finally {
    
     // await client.close();
   }
@@ -83,7 +82,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('Hello welcome   developer!')
+  res.send('Hello welcome new here for developer!')
 })
 
 app.listen(port, () => {
