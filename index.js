@@ -3,7 +3,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const cors = require('cors')
 require('dotenv').config()
 const app = express()
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 8000;
 
 
 // Middleware
@@ -58,11 +58,10 @@ app.get("/saaspicprotfolio", async (req,res)=>{
   }
 });
 
-app.get("/description", async (req,res)=>{
+app.get("/myblogpage", async (req,res)=>{
   const result = await blogpostcollection.find().toArray();
   res.send(result);
 });
-
 
 app.get('/paginationcount', async(req,res)=>{
   const count = await blogpostcollection.countDocuments();
