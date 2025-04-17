@@ -58,7 +58,7 @@ app.get("/saaspicprotfolio", async (req,res)=>{
   }
 });
 
-app.get("/detail", async (req,res)=>{
+app.get("/detailpost", async (req,res)=>{
   const result = await blogpostcollection.find().toArray();
   res.send(result);
 });
